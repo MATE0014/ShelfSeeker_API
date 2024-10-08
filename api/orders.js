@@ -40,9 +40,9 @@ const orderSchema = new mongoose.Schema({
 
 const Order = mongoose.model("Order", orderSchema);
 
-// API endpoint to handle order submissions
 app.post("/api/orders", async (req, res) => {
   console.log(req.body); // Log the incoming request body
+  console.log("Received a request"); // Add this line
   try {
     const newOrder = new Order(req.body);
     await newOrder.save();
